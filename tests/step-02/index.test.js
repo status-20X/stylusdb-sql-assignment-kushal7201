@@ -1,9 +1,10 @@
-const readCSV = require('../../src/csvReader');
+const readCSV = require('../src/csvReader');
 
 test('Read CSV File', async () => {
     const data = await readCSV('./sample.csv');
     expect(data.length).toBeGreaterThan(0);
-    expect(data.length).toBe(3);
-    expect(data[0].name).toBe('John');
-    expect(data[0].age).toBe('30'); //ignore the string type here, we will fix this later
+    expect(data.length).toBe(5);
+    expect(data[0].firstname).toBe('Kushal');
+    expect(data[0].lastname).toBe('Bansal');
+    expect(data[0].gender).toBe('Male');
 });
